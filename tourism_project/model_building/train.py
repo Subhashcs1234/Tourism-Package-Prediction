@@ -2,8 +2,8 @@
 # for data manipulation
 import pandas as pd
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, FunctionTransformer
-from sklearn.compose import ColumnTransformer, Pipeline
-from sklearn.pipeline import make_pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import make_pipeline, Pipeline
 # for model training, tuning, and evaluation
 import xgboost as xgb
 from sklearn.model_selection import GridSearchCV
