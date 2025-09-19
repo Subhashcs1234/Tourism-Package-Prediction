@@ -10,7 +10,7 @@ DATASET_PATH = "hf://datasets/subhash33/tourism-package/tourism.csv"
 tourism_dataset = pd.read_csv(DATASET_PATH)
 print("Dataset loaded successfully.")
 
-tourism_dataset['gender'] = tourism_dataset['gender'].replace('Fe Male', 'Female')
+tourism_dataset['Gender'] = tourism_dataset['Gender'].replace('Fe Male', 'Female')
 # tourism_dataset['NumberOfChildrenVisiting'] = tourism_dataset['NumberOfChildrenVisiting'].astype(int)
 # tourism_dataset['Age'] = tourism_dataset['Age'].astype(int)
 float_features = ['Age', 'DurationOfPitch', 'NumberOfFollowups', 'PreferredPropertyStar', 'NumberOfTrips', 'NumberOfChildrenVisiting', 'MonthlyIncome']
