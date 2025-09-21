@@ -11,8 +11,6 @@ tourism_dataset = pd.read_csv(DATASET_PATH)
 print("Dataset loaded successfully.")
 
 tourism_dataset['Gender'] = tourism_dataset['Gender'].replace('Fe Male', 'Female')
-# tourism_dataset['NumberOfChildrenVisiting'] = tourism_dataset['NumberOfChildrenVisiting'].astype(int)
-# tourism_dataset['Age'] = tourism_dataset['Age'].astype(int)
 float_features = ['Age', 'DurationOfPitch', 'NumberOfFollowups', 'PreferredPropertyStar', 'NumberOfTrips', 'NumberOfChildrenVisiting', 'MonthlyIncome']
 tourism_dataset[float_features] = tourism_dataset[float_features].astype(int)
 
@@ -55,7 +53,8 @@ y = tourism_dataset[target]
 Xtrain, Xtest, ytrain, ytest = train_test_split(
     X, y,              # Predictors (X) and target variable (y)
     test_size=0.2,     # 20% of the data is reserved for testing
-    random_state=42    # Ensures reproducibility by setting a fixed random seed
+    random_state=42,    # Ensures reproducibility by setting a fixed random seed
+    stratify=y
 )
 
 Xtrain.to_csv("Xtrain.csv",index=False)
